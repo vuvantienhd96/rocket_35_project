@@ -1,7 +1,9 @@
 import { useState } from 'react'
 // import reactLogo from './assets/react.svg'
 // import viteLogo from '/vite.svg'
-import './App.css'
+import './App.css';
+import {NewComponent} from './components/NewComponent'
+
 
 function App() {
   // state === 'trang thai'
@@ -27,20 +29,13 @@ function App() {
         style inline
       </p>
       <NewComponent child={count} child2 ={'xyz'} callback={getInfo}/>
+      <NewComponent child={count} child2 ={'xyz'} callback={getInfo}/>
+      <NewComponent child={count} child2 ={'xyz'} callback={getInfo}/>
+      <NewComponent child={count} child2 ={'xyz'} callback={getInfo}/>
     </>
   )
 }
 
-const NewComponent = function({child, child2, callback}) {
-  const getInfoChild = () => {
-    callback('this is child')
-  }
-  return (
-    <div>
-      hello NewComponent {child} : {child2};
-      <button onClick={getInfoChild}>getInfo</button>
-    </div>
-  )
-}
+
 
 export default App
