@@ -5,10 +5,28 @@ import './App.css';
 import {NewComponent, c} from './components/NewComponent'
 import firstOne from './components/NewComponent';
 import { FormInput} from './components/FormInput';
+import { useEffect } from 'react';
 
 function App() {
   // state === 'trang thai'
   const [count, setCount] = useState(0);
+  const [data, setData] = useState({});
+
+  // chay duy nhat mot lan sau render
+  useEffect(() => {
+    console.log('tui chay co 1 lan duy nhat');
+    // fetch('https://jsonplaceholder.typicode.com/todos/1')
+    //   .then(response => response.json())
+    //   .then(json => setData(json))
+  }, []);
+
+  useEffect(() => {
+    console.log('tui chay khi count thay doi');
+    fetch('https://jsonplaceholder.typicode.com/todos/1')
+      .then(response => response.json())
+      .then(json => setData(json))
+  }, [count]);
+
 
   const xinchao = 'hello world';
   const ShowName = () => {
@@ -20,11 +38,12 @@ function App() {
 
   return (
     <>
+
       <h2
         className='title'
         onClick={ShowName}
       >
-        xin chao {count}  : ===== {c} : ===== {firstOne}
+        xin chao {data?.title}  : ===== {c} : ===== {firstOne}
       </h2>
       <p style={{ color: "red" }}>
         style inline
