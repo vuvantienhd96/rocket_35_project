@@ -9,3 +9,9 @@ export const NewComponent = function({child, child2, callback}) {
       </div>
     )
   };
+
+
+export const c = 5;
+
+const firstOne = 10;
+export default firstOne;

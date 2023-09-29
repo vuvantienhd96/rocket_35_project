@@ -2,8 +2,9 @@ import { useState } from 'react'
 // import reactLogo from './assets/react.svg'
 // import viteLogo from '/vite.svg'
 import './App.css';
-import {NewComponent} from './components/NewComponent'
-
+import {NewComponent, c} from './components/NewComponent'
+import firstOne from './components/NewComponent';
+import { FormInput} from './components/FormInput';
 
 function App() {
   // state === 'trang thai'
@@ -23,15 +24,13 @@ function App() {
         className='title'
         onClick={ShowName}
       >
-        xin chao {count}
+        xin chao {count}  : ===== {c} : ===== {firstOne}
       </h2>
       <p style={{ color: "red" }}>
         style inline
       </p>
       <NewComponent child={count} child2 ={'xyz'} callback={getInfo}/>
-      <NewComponent child={count} child2 ={'xyz'} callback={getInfo}/>
-      <NewComponent child={count} child2 ={'xyz'} callback={getInfo}/>
-      <NewComponent child={count} child2 ={'xyz'} callback={getInfo}/>
+      <FormInput />
     </>
   )
 }
